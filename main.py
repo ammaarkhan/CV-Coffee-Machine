@@ -38,7 +38,7 @@ detector = HandDetector(detectionCon=0.8, maxHands=1)
 while True:
     success, img = cap.read()
     # Find the hand and its landmarks
-    hands, img = detector.findHands(img)  # with draw
+    hands, img = detector.findHands(cv2.flip(img, 1))  # with draw
     # this will overlay the camera feed on the background img
     imgBackground[139:139 + 480, 50:50 + 640] = img
     # this will overlay the mode on the background img
